@@ -32,7 +32,7 @@ class AdminDashboard extends Component {
     return (
       <React.Fragment>
         <h1 className="text-center" style={{ marginBottom: "25px" }}>
-          AdminDashboard
+          Admin Dashboard
         </h1>
         <ConnectedAVDetails></ConnectedAVDetails>
         <div className="row" style={{ margin: "0px" }}>
