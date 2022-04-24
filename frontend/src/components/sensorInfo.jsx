@@ -93,7 +93,7 @@ class SensorInfo extends Component {
         </h1>
         <div class="card-deck mb-3 text-center">
         <div className="col-md-7 col-10 my-5">
-        <div class="card mb-4 box-shadow" style={{backgroundColor: "#FAE395"}}>
+        <div class="card mb-4 box-shadow" style={{backgroundColor: "orange"}}>
           <div class="card-body">
             <p className="text-center" style={{fontSize: "50px"}}>
             {this.state.time}
@@ -102,7 +102,7 @@ class SensorInfo extends Component {
         </div>
          </div>
          <div className="col-md-5 col-10 my-5">
-        <div class="card mb-4 box-shadow" style={{backgroundColor: "#FAE395"}}>
+        <div class="card mb-4 box-shadow" style={{backgroundColor: "orange"}}>
          
           <div class="card-body">
             <p className="text-center" style={{ fontSize: "50px" }}>
@@ -112,7 +112,7 @@ class SensorInfo extends Component {
         </div>
          </div>
          <div className="col-md-5 col-10 my-5">
-        <div class="card mb-4 box-shadow" style={{backgroundColor: "#FAE395"}}>
+        <div class="card mb-4 box-shadow" style={{backgroundColor: "orange"}}>
           
           <div class="card-body">
             <p className="text-center" style={{ fontSize: "50px" }}>
@@ -123,7 +123,7 @@ class SensorInfo extends Component {
          </div>
 
          <div className="col-md-7 col-10 my-5">
-        <div class="card mb-4 box-shadow" style={{backgroundColor: "#FAE395"}}>
+        <div class="card mb-4 box-shadow" style={{backgroundColor: "orange"}}>
          
           <div class="card-body">
             <p className="text-center" style={{ fontSize: "50px" }}>
@@ -134,7 +134,7 @@ class SensorInfo extends Component {
          </div>
 
          <div className="col-md-10 col-10 my-5">
-        <div class="card mb-4 box-shadow" style={{backgroundColor: "#FAE395"}}>
+        <div class="card mb-4 box-shadow" style={{backgroundColor: "orange"}}>
 
           <div class="card-body">
             <p className="text-center" style={{ fontSize: "50px" }}>

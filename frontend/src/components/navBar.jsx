@@ -9,12 +9,11 @@ const NavBar = () => {
 
   return (
     <nav
-      className="navbar navbar-dark bg-dark fixed-top flex-md-nowrap p-10 shadow navbar-expand-md bg-info"
-      // style={{ backgroundColor: "#6930c3" }}
+      className="navbar navbar-light fixed-top flex-md-nowrap p-10 shadow navbar-expand-md"
+      style={{backgroundColor:'Orange'}}
     >
       <Link className="navbar-brand col-sm-3 col-md-2 mr-0" to="/">
-        <i className="fa fa-car"></i>
-         AVRental
+         Autonomous Vehicle Cloud
       </Link>
       <button
         className="navbar-toggler"
@@ -96,8 +95,7 @@ const NavBar = () => {
           {user && (
             <React.Fragment>
               <ListItemNavBar
-                iconClass="fa fa-user-circle-o"
-                label={"Welcome, " + user.name}
+                label={ user.name }
                 path="/"
               ></ListItemNavBar>
               <ListItemNavBar

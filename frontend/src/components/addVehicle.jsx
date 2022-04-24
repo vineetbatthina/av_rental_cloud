@@ -5,7 +5,6 @@ import Form from "./common/form";
 import { Redirect } from "react-router";
 import { addVehicle } from "../services/userService";
 import { getSubscriptionData } from "../services/userService";
-import companyLogo from './car_sports.png';
 
 const user = auth.getCurrentUser();
 
@@ -84,13 +83,13 @@ class AddVehicle extends Form {
     return(
         <React.Fragment>
 
-        <div className = "row">
+        <div style={{justifyContent:'center', display:'flex', color:'white'}}>
         <div className="col-md-6 col-10 my-5">
         <div className="card mb-4 box-shadow">          
-          <div className="card-header">
+          <div className="card-header" style={{justifyContent:'center', display:'flex', backgroundColor:'black', color:'white'}}>
             <h4 className="my-0 font-weight-normal">Add your Vehicle</h4>
           </div>
-          <div className="card-body" style={{backgroundColor: "#FAE395"}}>
+          <div className="card-body" style={{backgroundColor: "orange"}}>
           <form onSubmit={this.handleSubmit}>
             {this.renderInput("vId", "Vehicle ID")}
             {this.renderInput("vColor", "Vehicle Color")}
@@ -107,9 +106,7 @@ class AddVehicle extends Form {
         </div>
         </div>
           </div>
-          <div style={{width: "8px"},{heigth: "8px"}}>  
-        <img src={companyLogo} />   
-        </div>
+
         </div>
         </React.Fragment>
         );

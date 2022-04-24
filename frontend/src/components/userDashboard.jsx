@@ -47,43 +47,41 @@ class UserDashboard extends Component {
     console.log("MADE IT PAS SOCKET");
 
     const { data: getV } = await getVehicles();
-    this.setState({getV});
-    console.log("THIS: ",  this.state.getV[0]);  
-    if(this.state.getV.length>0){
+    this.setState({ getV });
+    console.log("THIS: ", this.state.getV[0]);
+    if (this.state.getV.length > 0) {
       this.setState({
-        currentState : this.state.getV[0].vcurrentstatus,
+        currentState: this.state.getV[0].vcurrentstatus,
         vid: this.state.getV[0].vid,
-        roadService : this.state.getV[0].roadservice
-      })
-      setTimeout(this.statuschange,3000);
-      
+        roadService: this.state.getV[0].roadservice,
+      });
+      setTimeout(this.statuschange, 3000);
     }
-
   }
 
-  statuschange =()=>{
+  statuschange = () => {
     console.log("entered in status");
-    var data = ({
-      status : this.state.getV[0].vcurrentstatus,
-      vid : this.state.getV[0].vid
-    })
+    var data = {
+      status: this.state.getV[0].vcurrentstatus,
+      vid: this.state.getV[0].vid,
+    };
     var stringdata = JSON.stringify(data);
-    console.log("data"+stringdata);
+    console.log("data" + stringdata);
 
-    axios.post(`http://localhost:3900/statusupdate/${stringdata}`)
-    .then(response=>{
-      console.log("hello entered here"+JSON.stringify(response));
-      setTimeout(function(){
-        window.location.reload();
-      }, 5000);
-
-    })
-    .catch(error=>{
-      if(error){
-        console.log(error);
-      }
-    }) 
-   }
+    axios
+      .post(`http://localhost:3900/statusupdate/${stringdata}`)
+      .then((response) => {
+        console.log("hello entered here" + JSON.stringify(response));
+        setTimeout(function () {
+          window.location.reload();
+        }, 5000);
+      })
+      .catch((error) => {
+        if (error) {
+          console.log(error);
+        }
+      });
+  };
 
   async populateAVStatusListData() {
     const { data: avStatus } = await getAvStates();
@@ -99,10 +97,9 @@ class UserDashboard extends Component {
     // const avState = await getAvStates();
     // console.log("LIST DATA: ", avStatus);
     // this.setState({ avStatus });
-
   }
 
-   reRenderAV = (data) => {
+  reRenderAV = (data) => {
     console.log("SOCKET INCOMING DATA: ", data);
     this.setState({
       currentState: data.currentState,
@@ -110,25 +107,23 @@ class UserDashboard extends Component {
       roadService: data.roadService,
       vid: data.vid,
     });
-    
+
     console.log("Populating count data");
   };
 
   reRenderAV1 = (data) => {
     console.log("SOCKET INCOMING DATA1: ", data);
-    this.setState({ currentLocation: data.currentLocation, 
-            vid: data.vid, });
+    this.setState({ currentLocation: data.currentLocation, vid: data.vid });
     const index = _.findIndex(this.state.getV, (v) => {
-        
-        return (v.vId == data.vId)
-    })
-    console.log(index)
+      return v.vId == data.vId;
+    });
+    console.log(index);
     this.setState({
-        currentState: this.state.getV[index].currentState,
-        serviceState: this.state.getV[index].serviceState,
-        roadService: this.state.getV[index].roadService,
-        vid: this.state.getV[index].vid,
-      });
+      currentState: this.state.getV[index].currentState,
+      serviceState: this.state.getV[index].serviceState,
+      roadService: this.state.getV[index].roadService,
+      vid: this.state.getV[index].vid,
+    });
     console.log("Populating count data");
   };
 
@@ -138,39 +133,39 @@ class UserDashboard extends Component {
         <h1 className="text-center" style={{ marginBottom: "25px" }}>
           My Dashboard
         </h1>
-       
-        <div class="card-deck mb-3 text-center">
-        <VehicleId
-          style={{ marginTop: "30px" }}
-          data={this.state.vid}
-        ></VehicleId>
-       
-        <CurrentState
-          style={{ marginTop: "30px" }}
-          data={this.state.currentState}
-        ></CurrentState>
 
-        
-        <ServiceState
-          style={{ marginTop: "35px" }}
-          data={this.state.serviceState}
-        ></ServiceState>
-        {/* <CurrentLocation
+
+        <div className="row">
+          <VehicleId
+            style={{ marginTop: "30px" }}
+            data={this.state.vid}
+          ></VehicleId>
+
+          <CurrentState
+            style={{ marginTop: "30px" }}
+            data={this.state.currentState}
+          ></CurrentState>
+
+          <ServiceState
+            style={{ marginTop: "35px" }}
+            data={this.state.serviceState}
+          ></ServiceState>
+          {/* <CurrentLocation
           style={{ marginTop: "35px" }}
           data={this.state.currentLocation}
         ></CurrentLocation> */}
-        <RoadService
-          style={{ marginTop: "35px" }}
-          data={this.state.roadService}
-        ></RoadService>
-         <Link
-          className="btn btn-dark"
-          to={{
-            pathname: "/sensorinfo",
-          }}
-        >
-          View Sensor Information
-        </Link>
+          <RoadService
+            style={{ marginTop: "35px" }}
+            data={this.state.roadService}
+          ></RoadService>
+          <Link
+            className="btn btn-dark"
+            to={{
+              pathname: "/sensorinfo",
+            }}
+          >
+            View Sensor Information
+          </Link>
         </div>
       </React.Fragment>
     );

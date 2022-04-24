@@ -16,7 +16,7 @@ class VehicleId extends Component {
       <React.Fragment>
         <div className="col-md-5 col-10 my-5">
         <div class="card mb-4 box-shadow">
-          <div class="card-header">
+          <div class="card-header" style={{justifyContent:'center', display:'flex', backgroundColor:'orange', color:'black'}}>
           <h1 class="my-0 font-weight-normal">Vehicle License Plate</h1>
           </div>
           <div class="card-body">

@@ -4,7 +4,6 @@ import Joi from "joi-browser";
 import Form from "./common/form";
 import { Redirect } from "react-router";
 import { register } from "../services/userService";
-import companyLogo from './car_sports.png';
 
 class Register extends Form {
   state = {
@@ -37,34 +36,57 @@ class Register extends Form {
 
     if (!user) {
       return (
-        <div className = "row">
-        <div className="col-md-6 col-10 my-5">
-
-        <div className="card mb-4 box-shadow">  
-              
-          <div className="card-header">
-            <h4 className="my-0 font-weight-normal">Register</h4>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "10%",
+          }}
+        >
+          <div className="col-md-6 col-10 my-5">
+            <div className="card mb-4 box-shadow">
+              <div
+                className="card-header"
+                style={{justifyContent:'center', display:'flex', backgroundColor:'orange', color:'black'}}
+              >
+                <h4
+                  className="my-0 font-weight-normal"
+                  style={{ alignContent: "center" }}
+                >
+                  Login
+                </h4>
+              </div>
+              <div
+                className="card-body"
+                style={{ backgroundColor: "black", color: "white" }}
+              >
+                <form
+                  onSubmit={this.handleSubmit}
+                  style={{ color: "white", marginBottom: "5%" }}
+                >
+                  {this.renderInput("name", "Name")}
+                  {this.renderInput("username", "Username")}
+                  {this.renderInput("password", "Password", "password")}
+                  {this.renderButton("Register")}
+                </form>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <p>Returning User?</p>{" "}
+                  <a
+                    href="/login"
+                    style={{
+                      marginLeft: "1%",
+                      color: "orange",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {" "}
+                    Login Here
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="card-body" style={{backgroundColor: "#FAE395"}}>
-          <form onSubmit={this.handleSubmit}>
-            {this.renderInput("name", "Name")}
-            {this.renderInput("username", "Username")}
-            {this.renderInput("password", "Password", "password")}
-            {this.renderButton("Register")}
-          </form>
-          <br></br>
-              Already have an acoount? Please login here <a href="/login">Login</a>
         </div>
-        </div>
- 
-        </div>
-
-        <div style={{width: "8px"},{heigth: "8px"}}>  
-        <img src={companyLogo} />   
-        </div>
-
-        </div>
-
       );
     } else {
       if (user && user.isadmin) {

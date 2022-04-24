@@ -4,7 +4,7 @@ class TableHeader extends Component {
   render() {
     return (
       <thead className="thead-dark">
-        <tr>
+        <tr style={{backgroundColor:'orage', color:'black'}}>
           {this.props.columns.map((column) => (
             <th
               className="clickable"
@@ -13,6 +13,8 @@ class TableHeader extends Component {
                 fontSize: "22px",
                 paddingLeft: "25px",
                 fontFamily: "Courier",
+                backgroundColor:'orange',
+                color:'black'
               }}
             >
               {column.label}

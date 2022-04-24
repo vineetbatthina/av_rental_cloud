@@ -31,7 +31,7 @@ class MyPlan extends Component {
           data={this.state.futurePlans}
         ></FuturePlan>  */}
         <CurrentPlan
-          style={{ marginTop: "35px" },{backgroundColor: "#FAE395"}}
+          style={{ marginTop: "35px" },{backgroundColor: "orange"}}
           data={this.state.currentPlan}
         ></CurrentPlan>
         {/* <PastPlans

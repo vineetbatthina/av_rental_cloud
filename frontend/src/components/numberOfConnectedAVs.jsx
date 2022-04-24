@@ -13,7 +13,7 @@ class NumberOfConnectedAVs extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="card" style={{backgroundColor: "#FAE395"}}>
+        <div className="card" style={{backgroundColor: "orange"}}>
         <h1>Connected AV Vehicles</h1>
         <div
           className="dropdown-divider"

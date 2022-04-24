@@ -65,10 +65,10 @@ class DeleteVehicle extends Form {
 
 <div className="card mb-4 box-shadow">  
 
-<div className="card-header">
+<div className="card-header" style={{justifyContent:'center', display:'flex', backgroundColor:'black', color:'white'}}>
   <h4 className="my-0 font-weight-normal">Delete Vehicle</h4>
  </div>
-<div className="card-body" style={{backgroundColor: "#FAE395"}}>
+<div className="card-body" style={{backgroundColor: "orange"}}>
             <form onSubmit={this.handleSubmit}>
                 {this.renderInput("vId", "VID")}
                 {this.renderButton("Submit")}

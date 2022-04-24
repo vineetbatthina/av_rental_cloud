@@ -13,7 +13,7 @@ class NumberOfAVUsers extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="card" style={{backgroundColor: "#FAE395"}}>
+        <div className="card" style={{backgroundColor: "orange"}}>
         <h1> Registered AV Users</h1>
         <div
           className="dropdown-divider"

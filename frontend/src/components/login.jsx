@@ -3,7 +3,6 @@ import auth from "../services/authService";
 import Joi from "joi-browser";
 import Form from "./common/form";
 import { Redirect } from "react-router";
-import companyLogo from './car_sports.png';
 
 class LoginForm extends Form {
   state = {
@@ -37,27 +36,44 @@ class LoginForm extends Form {
     if (!user) {
       console.log("DID NOT GET USER");
       return (
-        <div className = "row">
-        <div className="col-md-6 col-10 my-5">
-        <div className="card mb-4 box-shadow">          
-          <div className="card-header">
-            <h4 className="my-0 font-weight-normal">Login</h4>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "10%",
+          }}
+        >
+          <div className="col-md-6 col-10 my-5">
+            <div className="card mb-4 box-shadow">
+              <div
+                className="card-header"
+                style={{justifyContent:'center', display:'flex', backgroundColor:'orange', color:'black'}}
+              >
+                <h4
+                  className="my-0 font-weight-normal"
+                  style={{ alignContent: "center" }}
+                >
+                  Login
+                </h4>
+              </div>
+              <div
+                className="card-body"
+                style={{ backgroundColor: "black", color: "white" }}
+              >
+                <form
+                  onSubmit={this.handleSubmit}
+                  style={{ color: "white", marginBottom: "5%" }}
+                >
+                  {this.renderInput("username", "Username")}
+                  {this.renderInput("password", "Password", "password")}
+                  {this.renderButton("Login")}
+                </form>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <p>New User?</p> <a href="/register" style={{marginLeft:'1%', color:'orange', fontWeight:'bold'}}> Register Here</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="card-body" style={{backgroundColor: "#FAE395"}}>
-            <form onSubmit={this.handleSubmit}>
-                {this.renderInput("username", "Username")}
-                {this.renderInput("password", "Password", "password")}
-                {this.renderButton("Login")}
-              </form>
-              <br></br>
-              Not a user already? Click here <a href="/register">Register</a>
-          </div>
-          </div>
-        </div>
-        <div style={{width: "8px"},{heigth: "8px"}}>  
-        <img src={companyLogo} />   
-        </div>
-
         </div>
       );
     } else {

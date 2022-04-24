@@ -55,7 +55,7 @@ class MyRides extends Component {
                     }}
                 >Schedule a Ride</Link>
                 <p></p>
-                <Table data={rides} columns={this.columns} keyAtt="vdatetime" ></Table>
+                <Table data={rides} columns={this.columns} keyAtt="vdatetime"></Table>
                 
             </React.Fragment>
         );
