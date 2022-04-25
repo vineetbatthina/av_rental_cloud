@@ -163,6 +163,7 @@ class UserDashboard extends Component {
             to={{
               pathname: "/sensorinfo",
             }}
+            style={{backgroundColor:'orange', color:'black'}}
           >
             View Sensor Information
           </Link>

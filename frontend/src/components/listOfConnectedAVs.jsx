@@ -32,6 +32,7 @@ class ListOfConnectedAVs extends Component {
           columns={this.columns}
           keyAtt="number"
         ></Table>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style={{backgroundColor:'orange', color:'black', borderRadius:'5px'}}>Edit Vehicle Status</button>
       </React.Fragment>
     );
   }
