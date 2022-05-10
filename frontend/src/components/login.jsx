@@ -43,8 +43,8 @@ class LoginForm extends Form {
             marginTop: "10%",
           }}
         >
-          <div className="col-md-6 col-10 my-5">
-            <div className="card mb-4 box-shadow">
+          <div className="col-md-6 col-10 my-5" >
+            <div className="card mb-4 border-0">
               <div
                 className="card-header"
                 style={{justifyContent:'center', display:'flex', backgroundColor:'orange', color:'black'}}

@@ -99,7 +99,7 @@ class ScheduleRide extends Form {
     return (
       <React.Fragment>
         <div style={{justifyContent:'center', display:'flex', marginTop:'10%'}}>
-          <div className="card mb-4 box-shadow" >
+          <div className="card mb-4 box-shadow border-0" >
             <div className="card-header" style={{justifyContent:'center', display:'flex', backgroundColor:'black', color:'white'}}>
               <h4 className="my-0 font-weight-normal">Schedule your ride</h4>
             </div>

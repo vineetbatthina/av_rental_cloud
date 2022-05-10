@@ -115,7 +115,7 @@ class AddPlan extends Form {
         <h1> Add your Plan </h1>
        <div className="col-md-6 col-10 my-5">
 
-        <div className="card mb-4 box-shadow">  
+        <div className="card mb-4 box-shadow border-0">  
       
         <div className="card-header" style={{justifyContent:'center', display:'flex', backgroundColor:'black', color:'white'}}>
           <h4 className="my-0 font-weight-normal">Billing Details</h4>

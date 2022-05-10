@@ -23,6 +23,7 @@ import { socketUrl } from "./config.json";
 import { getJwt } from "./services/authService";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { io } from "socket.io-client";
+import background from './images/background.jpg';
 export const socket = io(socketUrl, {
   query: {
     jwtToken: getJwt(),
@@ -33,9 +34,10 @@ class App extends Component {
   state = {};
   render() {
     return (
-      <React.Fragment>
+      <div style={{ backgroundColor:'yellow', height:'100vh', backgroundImage: `url(${background})`, backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
+         <React.Fragment >
         <NavBar></NavBar>
-        <main className="container" style={{ paddingTop: "80px" }}>
+        <main className="container" style={{ paddingTop: "80px"}}>
           <Switch>
             <Route path="/login" component={Login}></Route>
             <Route path="/logout" component={Logout}></Route>
@@ -65,6 +67,8 @@ class App extends Component {
           </Switch>
         </main>
       </React.Fragment>
+      </div>
+     
     );
   }
 }

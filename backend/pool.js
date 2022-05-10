@@ -2,7 +2,7 @@ const mysql = require('mysql');
 const myPort = 3306;
 const pool = mysql.createPool({
     connectionLimit: 100,
-    host: 'database-1.ci1hbrdpgnwh.us-east-2.rds.amazonaws.com',
+    host: 'avclouddb.ci1hbrdpgnwh.us-east-2.rds.amazonaws.com',
     user: 'admin',
     port: myPort,
     password: 'adminadmin',

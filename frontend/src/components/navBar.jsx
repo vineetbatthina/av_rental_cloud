@@ -10,7 +10,7 @@ const NavBar = () => {
   return (
     <nav
       className="navbar navbar-light fixed-top flex-md-nowrap p-10 shadow navbar-expand-md"
-      style={{backgroundColor:'Orange'}}
+      style={{backgroundColor:'orange'}}
     >
       <Link className="navbar-brand col-sm-3 col-md-2 mr-0" to="/">
          Autonomous Vehicle Cloud

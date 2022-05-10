@@ -5,7 +5,7 @@ const withCardView = (CustomComponent) => {
     render() {
       const { style, ...rest } = this.props;
       return (
-        <div className="card border-info mb-3" style={style}>
+        <div className="card border-info mb-3 border-0" style={style}>
           <div className="card-body">
             <CustomComponent {...rest}></CustomComponent>
           </div>

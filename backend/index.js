@@ -19,7 +19,7 @@ const app = express();
 app.use(bodyParser.json());
 
 const pool = mysql.createConnection({
-  host: 'database-1.ci1hbrdpgnwh.us-east-2.rds.amazonaws.com',
+  host: 'avclouddb.ci1hbrdpgnwh.us-east-2.rds.amazonaws.com',
   user: 'admin',
   port: 3306,
   password: 'adminadmin',
