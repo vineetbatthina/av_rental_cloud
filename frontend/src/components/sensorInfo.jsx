@@ -53,21 +53,23 @@ class SensorInfo extends Component {
 
   componentDidMount() {
     console.log("yoyoyoyo");
-    axios.get("http://localhost:3900/sensorinfo").then(response=>{
-      console.log("hello entered here"+JSON.stringify(response));
-      this.setState({
-        time : response.data.Vehicle[5],
-        speed : response.data.Vehicle[7],
-        heading : response.data.Vehicle[8],
-        location :  response.data.Vehicle[9],
-        gnss : response.data.Vehicle[10]
+    axios
+      .get("http://localhost:3900/sensorinfo")
+      .then((response) => {
+        console.log("hello entered here" + JSON.stringify(response));
+        this.setState({
+          time: response.data.Vehicle[5],
+          speed: response.data.Vehicle[7],
+          heading: response.data.Vehicle[8],
+          location: response.data.Vehicle[9],
+          gnss: response.data.Vehicle[10],
+        });
       })
-    })
-    .catch(error=>{
-      if(error){
-        console.log(error);
-      }
-    })
+      .catch((error) => {
+        if (error) {
+          console.log(error);
+        }
+      });
 
     console.log("MADE IT PAS SOCKET");
   }
@@ -84,73 +86,149 @@ class SensorInfo extends Component {
     console.log("SET STATE", this.state.tailight);
   };
 
+  generateRandom = (min = 0, max = 100) => {
+    // find diff
+    let difference = max - min;
+
+    // generate random number
+    let rand = Math.random();
+
+    // multiply with difference
+    rand = Math.floor(rand * difference);
+
+    // add with min value
+    rand = rand + min;
+
+    return rand;
+  };
+
   render() {
+    var now = new Date();
+    var locations = [
+      "San Francisco",
+      "Santa Jose",
+      "Santa Clara",
+      "Milipitas",
+      "San Ramon",
+      "Dublin",
+    ];
+    var carStates = [
+      "Active",
+      "Active",
+      "Active",
+      "Active",
+      "Inactive",
+      "Needs Maintenance",
+      "Idle",
+      "Waiting",
+    ];
     return (
- 
       <React.Fragment>
-        <h1 className="text-center" style={{ marginBottom: "25px" }}>
+        <h1
+          className="text-center"
+          style={{ marginBottom: "25px", color: "orange" }}
+        >
           Additional Sensor Information
         </h1>
-        <div class="card-deck mb-3 text-center">
-        <div className="col-md-7 col-10 my-5">
-        <div class="card mb-4 box-shadow border-0" style={{backgroundColor: "orange"}}>
-          <div class="card-body">
-            <p className="text-center" style={{fontSize: "50px"}}>
-            {this.state.time}
-              </p>
-          </div>
-        </div>
-         </div>
-         <div className="col-md-5 col-10 my-5">
-        <div class="card mb-4 box-shadow border-0" style={{backgroundColor: "orange"}}>
-         
-          <div class="card-body">
-            <p className="text-center" style={{ fontSize: "50px" }}>
-            {this.state.speed}
-              </p>
-          </div>
-        </div>
-         </div>
-         <div className="col-md-5 col-10 my-5">
-        <div class="card mb-4 box-shadow border-0" style={{backgroundColor: "orange"}}>
-          
-          <div class="card-body">
-            <p className="text-center" style={{ fontSize: "50px" }}>
-            {this.state.heading}
-              </p>
-          </div>
-        </div>
-         </div>
 
-         <div className="col-md-7 col-10 my-5">
-        <div class="card mb-4 box-shadow border-0" style={{backgroundColor: "orange"}}>
-         
-          <div class="card-body">
-            <p className="text-center" style={{ fontSize: "50px" }}>
-            {this.state.location}
-              </p>
-          </div>
-        </div>
-         </div>
-
-         <div className="col-md-10 col-10 my-5">
-        <div class="card mb-4 box-shadow border-0" style={{backgroundColor: "orange"}}>
-
-          <div class="card-body">
-            <p className="text-center" style={{ fontSize: "50px" }}>
-            {this.state.gnss}
-              </p>
-          </div>
-        </div>
-         </div>
-
-
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <div
+                class="card mb-4 box-shadow border-0"
+                style={{ backgroundColor: "orange" }}
+              >
+                <div class="card-header" style={{ backgroundColor:'black', color:'white' }}>
+                  <p className="text-center" style={{ fontSize: "35px" }}>
+                    Last Time Stamp
+                  </p>
+                </div>
+                <div class="card-body">
+                  <p className="text-center" style={{ fontSize: "25px" }}>
+                    {/* {this.state.time} */}
+                    {now.toUTCString()}
+                  </p>
+                </div>
+              </div>
             </div>
-
-       
-        
-        
-        {/* <Table data={this.state.data} columns={this.columns} keyAtt="headlight" ></Table> */}
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <div
+                class="card mb-4 box-shadow border-0"
+                style={{ backgroundColor: "orange" }}
+              >
+                <div class="card-header" style={{ backgroundColor:'black', color:'white' }}>
+                  <p className="text-center" style={{ fontSize: "35px" }}>
+                    Current Speed
+                  </p>
+                </div>
+                <div class="card-body">
+                  <p className="text-center" style={{ fontSize: "25px" }}>
+                    {/* {this.state.speed} */}
+                    {this.generateRandom()} km/hr
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div
+                class="card mb-4 box-shadow border-0"
+                style={{ backgroundColor: "orange" }}
+              >
+                <div class="card-header" style={{ backgroundColor:'black', color:'white' }}>
+                  <p className="text-center" style={{ fontSize: "35px" }}>
+                    Current Location
+                  </p>
+                </div>
+                <div class="card-body">
+                  <p className="text-center" style={{ fontSize: "25px" }}>
+                    {/* {this.state.heading} */}
+                    {locations[this.generateRandom(0, locations.length)]}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <div
+                class="card mb-4 box-shadow border-0"
+                style={{ backgroundColor: "orange" }}
+              >
+                <div class="card-header" style={{ backgroundColor:'black', color:'white' }}>
+                  <p className="text-center" style={{ fontSize: "35px" }}>
+                    Next Location
+                  </p>
+                </div>
+                <div class="card-body">
+                  <p className="text-center" style={{ fontSize: "25px" }}>
+                    {/* {this.state.location} */}
+                    {locations[this.generateRandom(0, locations.length)]}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div
+                class="card mb-4 box-shadow border-0"
+                style={{ backgroundColor: "orange" }}
+              >
+                <div class="card-header" style={{ backgroundColor:'black', color:'white' }}>
+                  <p className="text-center" style={{ fontSize: "35px"}}>
+                    Vehicle Status
+                  </p>
+                </div>
+                <div class="card-body">
+                  <p className="text-center" style={{ fontSize: "25px" }}>
+                    {/* {this.state.gnss} */}
+                    {carStates[this.generateRandom(0, carStates.length)]}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </React.Fragment>
     );
   }

@@ -84,7 +84,7 @@ class ListOfConnectedAVs extends Component {
         <button
           type="button"
           onClick={this.onCartClick}
-          className="btn btn-primary"
+          className="btn"
           data-toggle="modal"
           data-target="#exampleModal"
           style={{
@@ -105,7 +105,7 @@ class ListOfConnectedAVs extends Component {
                 <span
                   class="input-group-text"
                   id="inputGroup-sizing-default"
-                  style={{ backgroundColor: "black", color: "black" }}
+                  style={{ backgroundColor: "black", color: "white" }}
                 >
                   Vehicle Id
                 </span>

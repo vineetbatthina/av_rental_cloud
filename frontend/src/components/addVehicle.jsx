@@ -86,7 +86,7 @@ class AddVehicle extends Form {
 
         <div style={{justifyContent:'center', display:'flex', color:'white'}}>
         <div className="col-md-6 col-10 my-5">
-        <div className="card mb-4 box-shadow border-0">          
+        <div className="card box-shadow border-0" style={{width:'100%'}}>          
           <div className="card-header" style={{justifyContent:'center', display:'flex', backgroundColor:'black', color:'white'}}>
             <h4 className="my-0 font-weight-normal">Add your Vehicle</h4>
           </div>

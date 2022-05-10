@@ -44,7 +44,7 @@ class Register extends Form {
           }}
         >
           <div className="col-md-6 col-10 my-5">
-            <div className="card mb-4 box-shadow border-0">
+            <div className="card box-shadow border-0" style={{width:'100%'}}>
               <div
                 className="card-header"
                 style={{justifyContent:'center', display:'flex', backgroundColor:'orange', color:'black'}}

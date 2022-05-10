@@ -130,10 +130,6 @@ class UserDashboard extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1 className="text-center" style={{ marginBottom: "25px" }}>
-          My Dashboard
-        </h1>
-
 
         <div className="row">
           <VehicleId

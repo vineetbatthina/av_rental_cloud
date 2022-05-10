@@ -44,15 +44,13 @@ class MyRides extends Component {
         return (
             
             <React.Fragment>
-                <div>
-                    <h1 className="text-center" style={{ marginBottom: "25px" }}>
-                        {user1 + "'s Ride History"}</h1>
-                </div>
+
                 <Link
-                    className="btn btn-dark"
+                    className="btn"
                     to={{
                         pathname: "/mySchedule",
                     }}
+                    style={{backgroundColor:'black', color:'white', borderRadius:'5px', width:'25%', height:'100%'}}
                 >Schedule a Ride</Link>
                 <p></p>
                 <Table data={rides} columns={this.columns} keyAtt="vdatetime"></Table>

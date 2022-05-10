@@ -51,8 +51,8 @@ class Form extends Component {
     return (
       <button
         disabled={this.validate()}
-        className="btn  btn-dark"
         onClick={onClick}
+        style={{backgroundColor:'black', color:'white', borderRadius:'5px', width:'25%', height:'100%'}}
       >
         {label}
       </button>

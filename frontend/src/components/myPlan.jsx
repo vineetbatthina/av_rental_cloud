@@ -22,16 +22,13 @@ class MyPlan extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1 className="text-center" style={{ marginBottom: "25px" }}>
-          MyPlan
-        </h1>
-       
+
         {/* <FuturePlan
           style={{ marginTop: "30px" }}
           data={this.state.futurePlans}
         ></FuturePlan>  */}
         <CurrentPlan
-          style={{ marginTop: "35px" },{backgroundColor: "orange"}}
+          style={{ marginTop: "35px" ,backgroundColor: "orange"}}
           data={this.state.currentPlan}
         ></CurrentPlan>
         {/* <PastPlans
@@ -39,7 +36,7 @@ class MyPlan extends Component {
           data={this.state.pastPlans}
         ></PastPlans> */}
          <Link
-          className="btn btn-dark"
+          className="btn"
           to={{
             pathname: "/myPlan/addPlan",
             state: {
@@ -47,6 +44,7 @@ class MyPlan extends Component {
               currentPlan: this.state.currentPlan,
             },
           }}
+          style={{backgroundColor:'black', color:'white', borderRadius:'5px', width:'25%', height:'100%'}}
         >
           Add Plan
         </Link>

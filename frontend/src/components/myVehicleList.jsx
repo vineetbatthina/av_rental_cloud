@@ -79,10 +79,7 @@ class VehicleList extends Component {
         return (
             
             <div className="container" style={{marginLeft: "-130px"}}>
-                <div>
-                    <h1 className="text-center" style={{ marginBottom: "25px", marginLeft: "300px"}}>
-                        { "My Vehicles"}</h1>
-                </div>
+
                 <div> 
                     {/* <Link style={{marginRight: "20px"}}
                         className="btn btn-dark"
