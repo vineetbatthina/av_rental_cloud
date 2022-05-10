@@ -12,21 +12,30 @@ class NumberOfAVUsers extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <div className="card" style={{backgroundColor: "orange"}}>
-        <h1> Registered AV Users</h1>
-        <div
-          className="dropdown-divider"
-          style={{
-            marginBottom: "30px",
-            borderBlockColor: "black",
-          }}
-        ></div>
-        <p className="text-center" style={{ fontSize: "50px" }}>
-          {this.state.userCount}
-        </p>
+        <div container>
+          <div class="row">
+            <div class="col-sm">
+              <div
+                class="card mb-4 box-shadow border-0"
+                style={{ backgroundColor: "orange" }}
+              >
+                <div
+                  class="card-header"
+                  style={{ backgroundColor: "black", color: "white" }}
+                >
+                  <p className="text-center" style={{ fontSize: "35px" }}>
+                    Registered AV Users
+                  </p>
+                </div>
+                <div class="card-body">
+                  <p className="text-center" style={{ fontSize: "40px" }}>
+                    {this.state.userCount}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </React.Fragment>
     );
   }
 }

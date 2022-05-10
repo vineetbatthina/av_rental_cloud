@@ -7,6 +7,7 @@ import ListOfConnectedAVs from "./listOfConnectedAVs";
 import { getAVStateAndCount, getListOfAVs } from "../services/avService";
 import { getJwt } from "../services/authService";
 import { socket } from "../App";
+import { Grid } from "@mui/material";
 
 // import { io } from "socket.io-client";
 // const socket = io("http://localhost:3900", {
@@ -84,10 +85,9 @@ class ConnectedAVDetails extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <div className="row" style={{ margin: "0px" }}>
-          <div className="col-12">
-            <StatesOfConnectedAVs
+        <Grid container>
+          <Grid item md={12}>
+          <StatesOfConnectedAVs
               style={{
                 margin: "30px 10px",
                 paddingLeft: "20px",
@@ -95,11 +95,9 @@ class ConnectedAVDetails extends Component {
               }}
               data={this.state.avStatusDistributionData}
             ></StatesOfConnectedAVs>
-          </div>
-        </div>
-        <div className="row" style={{ margin: "0px" }}>
-          <div className="col-12">
-            <ListOfConnectedAVs
+          </Grid>
+          <Grid item md={12}>
+          <ListOfConnectedAVs
               style={{
                 margin: "30px 10px",
                 paddingLeft: "20px",
@@ -107,9 +105,8 @@ class ConnectedAVDetails extends Component {
               }}
               data={this.state.avStatusList}
             ></ListOfConnectedAVs>
-          </div>
-        </div>
-      </React.Fragment>
+          </Grid>
+        </Grid>
     );
   }
 }

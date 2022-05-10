@@ -5,6 +5,7 @@ import ConnectedAVDetails from "./connectedAVDetails";
 import StatesOfConnectedAVs from "./statesOfConnectedAVs";
 import UserList from "./userList";
 import axios from "axios";
+import { Grid } from "@mui/material";
 class AdminDashboard extends Component {
   state = {
     userdata : ""
@@ -30,45 +31,34 @@ class AdminDashboard extends Component {
       udata = this.state.userdata;
     }
     return (
-      <React.Fragment>
-        <ConnectedAVDetails></ConnectedAVDetails>
-        <div className="row" style={{ margin: "0px" }}>
-          <div className="col-md-6 col-10 my-5">
-            <NumberOfAVUsers
-              style={{
-                margin: "30px 10px",
-                float: "left",
-                paddingLeft: "20px",
-                paddingRight: "20px",
-              }}
-            ></NumberOfAVUsers>
-          </div>
-          <div className="col-md-6 col-10 my-5" >
-            <NumberOfConnectedAVs
-              style={{
-                margin: "30px 10px",
-                float: "right",
-                paddingLeft: "20px",
-                paddingRight: "20px",
-              }}
-            ></NumberOfConnectedAVs>
-          </div>
-        </div>
-      
-        {/* <UserList data ={udata}></UserList> */}
+      <Grid container style={{width:'100%'}} rowSpacing={1} columnSpacing={2}>
+        <Grid item md={12}>
+          <ConnectedAVDetails></ConnectedAVDetails>
+        </Grid>
+        <Grid item md={6}>
+          <NumberOfAVUsers
+            style={{
+              margin: "30px 10px",
+              float: "left",
+              paddingLeft: "20px",
+              paddingRight: "20px",
+            }}
+          ></NumberOfAVUsers>
+        </Grid>
+        <Grid item md={6}>
+          <NumberOfConnectedAVs
+            style={{
+              margin: "30px 10px",
+              float: "right",
+              paddingLeft: "20px",
+              paddingRight: "20px",
+            }}
+          ></NumberOfConnectedAVs>
+        </Grid>
+        
+      </Grid>
+        
 
-        {/* <div className="row" style={{ margin: "0px" }}>
-          <div className="col-12">
-            <StatesOfConnectedAVs
-              style={{
-                margin: "30px 10px",
-                paddingLeft: "20px",
-                paddingRight: "20px",
-              }}
-            ></StatesOfConnectedAVs>
-          </div>
-        </div> */}
-      </React.Fragment>
     );
   }
 }

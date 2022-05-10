@@ -5,6 +5,7 @@ import Table from "./common/table";
 import { changeVehicleStatus } from "../services/avService";
 import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import AdminVehicleTable from "./common/adminVehicleTable";
 
 class ListOfConnectedAVs extends Component {
   constructor(props) {
@@ -68,7 +69,7 @@ class ListOfConnectedAVs extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>List of connected AVs</h1>
+        <h1>Vehicles Available</h1>
         <div
           classNameName="dropdown-divider"
           style={{
@@ -76,11 +77,7 @@ class ListOfConnectedAVs extends Component {
             borderBlockColor: "#BEE5F0",
           }}
         ></div>
-        <Table
-          data={this.props.data}
-          columns={this.columns}
-          keyAtt="number"
-        ></Table>
+        <AdminVehicleTable data={this.props.data}/>
         <button
           type="button"
           onClick={this.onCartClick}
@@ -91,6 +88,7 @@ class ListOfConnectedAVs extends Component {
             backgroundColor: "black",
             color: "white",
             borderRadius: "5px",
+            marginLeft:'1%'
           }}
         >
           Edit Vehicle Status

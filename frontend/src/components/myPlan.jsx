@@ -31,10 +31,7 @@ class MyPlan extends Component {
           style={{ marginTop: "35px" ,backgroundColor: "orange"}}
           data={this.state.currentPlan}
         ></CurrentPlan>
-        {/* <PastPlans
-          style={{ marginTop: "35px" }}
-          data={this.state.pastPlans}
-        ></PastPlans> */}
+
          <Link
           className="btn"
           to={{

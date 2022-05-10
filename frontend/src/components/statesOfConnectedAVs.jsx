@@ -38,7 +38,7 @@ class StatesOfConnectedAVs extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1> States of connected AVs</h1>
+        <h1> Vehicles Status</h1>
         <div
           className="dropdown-divider"
           style={{
