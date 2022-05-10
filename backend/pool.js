@@ -2,11 +2,11 @@ const mysql = require('mysql');
 const myPort = 3306;
 const pool = mysql.createPool({
     connectionLimit: 100,
-    host: 'cmpe281-sql.cb1wlfbxikzf.us-east-2.rds.amazonaws.com',
+    host: 'database-1.ci1hbrdpgnwh.us-east-2.rds.amazonaws.com',
     user: 'admin',
     port: myPort,
-    password: '123456789',
-    database: '281_AV'
+    password: 'adminadmin',
+    database: '281DB'
 });
 
 pool.getConnection((err) => {

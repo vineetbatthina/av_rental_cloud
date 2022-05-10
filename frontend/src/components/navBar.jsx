@@ -57,9 +57,14 @@ const NavBar = () => {
              <ListItemNavBar
               
               label="Add a Vehicle"
-              path="/myVehicles/addVehicle"
+              path="/addVehicle"
             ></ListItemNavBar>
              <ListItemNavBar
+                
+                label="All Vehicles"
+                path="/allVehicles"
+              ></ListItemNavBar>
+              <ListItemNavBar
                 
                 label="My Vehicles"
                 path="/myVehicles"

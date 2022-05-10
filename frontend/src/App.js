@@ -14,6 +14,7 @@ import AdminDashboard from "./components/adminDashboard";
 import UserDashboard from "./components/userDashboard";
 import ScheduleRide from "./components/scheduleRide";
 import VehicleList from "./components/vehicleList";
+import MyVehicleList from "./components/myVehicleList";
 import AddVehicle from "./components/addVehicle";
 import SensorInfo from "./components/sensorInfo";
 import MyRides from "./components/myRides";
@@ -44,10 +45,11 @@ class App extends Component {
             <UserRoute path="/myStatus" component={UserDashboard}></UserRoute>
             <UserRoute path="/mySchedule" component={ScheduleRide}></UserRoute>
             <UserRoute
-              path="/myVehicles/addVehicle"
+              path="/addVehicle"
               component={AddVehicle}
             ></UserRoute>
-            <UserRoute path="/myVehicles" component={VehicleList}></UserRoute>
+            <UserRoute path="/allVehicles" component={VehicleList}></UserRoute>
+            <UserRoute path="/myVehicles" component={MyVehicleList}></UserRoute>
             <UserRoute path="/sensorinfo" component={SensorInfo}></UserRoute>
             <UserRoute path="/myRides" component={MyRides}></UserRoute>
             <UserRoute

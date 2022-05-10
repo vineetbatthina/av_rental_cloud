@@ -59,7 +59,7 @@ router.post("/plan", auth, async (req, res) => {
 });
 
 // added
-router.post("/myVehicles", auth, async (req, res) => {
+router.post("/allVehicles", auth, async (req, res) => {
   console.log(
     "req.body: ",
     _.pick(req.body, [
@@ -138,7 +138,7 @@ router.post("/scheduleRide", auth, async (req, res) => {
     }
 });
 
-router.get("/myVehicles", auth, async (req, res) => {
+router.get("/allVehicles", auth, async (req, res) => {
   const plan = await VehicleList.getVehicles(req.user.email);
   console.log("inside get my vehciles:", plan);
   res.send(plan);

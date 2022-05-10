@@ -33,6 +33,18 @@ class VehicleList extends Component {
         const { data: vehicles } = await getVehicles();
         console.log("Made it: ", vehicles);
         const data1 = [];
+        let filteredVehicles = []
+        if(localStorage.getItem('customerVehicleInfo')){
+            vehicles.map(vehicle => {
+                if(vehicle.vid == JSON.parse(localStorage.getItem('customerVehicleInfo')).vId){
+                    filteredVehicles.push(vehicle);
+                }
+            })
+        }
+        else{
+            vehicles.length= 0
+        }
+        
         // vechiles.map((item) => {
         //     data1.push({g
         //       vId: item.vId,
@@ -40,7 +52,9 @@ class VehicleList extends Component {
         //       vMake: item.vMake,
         //     });
         // });
-        this.setState({vehicles});
+        console.log(vehicles);
+        console.log(filteredVehicles);
+        this.setState({filteredVehicles});
 
         // const { data: planDetails } = await getSubscriptionData();
         // console.log("PD", planDetails);
@@ -60,14 +74,14 @@ class VehicleList extends Component {
 
     render() {
      
-        const {vehicles} = this.state;
+        const {filteredVehicles} = this.state;
         // console.log(y);
         return (
             
             <div className="container" style={{marginLeft: "-130px"}}>
                 <div>
                     <h1 className="text-center" style={{ marginBottom: "25px", marginLeft: "300px"}}>
-                        { "All Vehicles"}</h1>
+                        { "My Vehicles"}</h1>
                 </div>
                 <div> 
                     {/* <Link style={{marginRight: "20px"}}
@@ -88,7 +102,7 @@ class VehicleList extends Component {
                 
                 <p></p>
                 <div>
-                    <Table data={vehicles} columns={this.columns} keyAtt="vId" ></Table>
+                    <Table data={filteredVehicles} columns={this.columns} keyAtt="vId" ></Table>
                     <Link 
                         className="btn btn-dark"
                         to={{

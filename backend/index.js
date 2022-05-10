@@ -19,11 +19,11 @@ const app = express();
 app.use(bodyParser.json());
 
 const pool = mysql.createConnection({
-  host: 'cmpe281-sql.cb1wlfbxikzf.us-east-2.rds.amazonaws.com',
+  host: 'database-1.ci1hbrdpgnwh.us-east-2.rds.amazonaws.com',
   user: 'admin',
   port: 3306,
-  password: '123456789',
-  database: '281_AV'
+  password: 'adminadmin',
+  database: '281DB'
 });
 
 pool.connect((err) => {
@@ -43,7 +43,7 @@ if (!config.get("jwtPrivateKey")) {
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb+srv://santhoshsai3:December2020@cluster0.jfmux.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" , {
+  .connect("mongodb+srv://santhoshsai3:December2020@cluster0.jfmux.mongodb.net/SensorData?retryWrites=true&w=majority" , {
     // retry to connect 
     reconnectTries: 1,
     // wait 5 seconds before retryMon
@@ -97,7 +97,7 @@ app.post('/statusupdate/:data',(req,res)=>{
 
 app.get('/sensorinfo',(req,res)=>{
  
-  SensorInfo.findOne({},(err,result)=>{
+  SensorInfo.findOne((err,result)=>{
     console.log("hello world")
      if(err){
        console.log(err);

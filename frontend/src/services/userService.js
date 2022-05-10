@@ -31,7 +31,7 @@ export function getUserCount() {
 
 // added
 export function addVehicle(vehicleData) {
-  return http.post(apiEndpoint + "/myVehicles", {
+  return http.post(apiEndpoint + "/allVehicles", {
     vId: vehicleData.vId,
     vColor: vehicleData.vColor,
     vMake: vehicleData.vMake,
@@ -52,7 +52,7 @@ export function deleteVehicle(vehicleId) {
 }
 
 export function getVehicles() {
-  return http.get(apiEndpoint + "/myVehicles");
+  return http.get(apiEndpoint + "/allVehicles");
 }
 
 export function getRides() {

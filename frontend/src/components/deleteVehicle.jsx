@@ -34,7 +34,7 @@ class DeleteVehicle extends Form {
       console.log(vehicleId);
       console.log("Submitted2");
       await deleteVehicle(vehicleId);
-      this.props.history.push("/myVehicles");
+      this.props.history.push("/allVehicles");
     }
     catch (ex) {
       if (ex.response && ex.response.status === 400) {

@@ -18,3 +18,7 @@ export function getAVStateAndCount() {
 export function getListOfAVs() {
   return http.get(apiEndpoint + "/listOfAVs");
 }
+
+export function changeVehicleStatus(vehicleId, vehicleStatus) {
+  return http.post(apiEndpoint + "/editVehicleStatus",{ vehicleId, vehicleStatus });
+}
