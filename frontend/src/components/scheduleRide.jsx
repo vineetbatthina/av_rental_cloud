@@ -80,7 +80,11 @@ class ScheduleRide extends Form {
       console.log("Submitted1");
       console.log(scheduleData);
       console.log("Submitted2");
-      await scheduleRide(scheduleData);
+      const scheduleRideResponse = await scheduleRide(scheduleData);
+      console.log(scheduleRideResponse);
+      if(scheduleRideResponse.status==200){
+        alert("Receipt has been sent to your mobile number");
+      }
       this.props.history.push("/myRides");
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {

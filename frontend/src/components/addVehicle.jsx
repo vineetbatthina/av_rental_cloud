@@ -65,7 +65,7 @@ class AddVehicle extends Form {
 
       await addVehicle(vehicleData);
       localStorage.setItem('customerVehicleInfo', JSON.stringify(vehicleData))
-      this.props.history.push("/myVehicles");
+      this.props.history.push("/allVehicles");
     }
     catch (ex) {
       if (ex.response && ex.response.status === 400) {

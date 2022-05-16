@@ -106,7 +106,7 @@ class SensorInfo extends Component {
     var now = new Date();
     var locations = [
       "San Francisco",
-      "Santa Jose",
+      "San Jose",
       "Santa Clara",
       "Milipitas",
       "San Ramon",

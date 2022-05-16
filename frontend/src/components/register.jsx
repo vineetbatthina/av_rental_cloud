@@ -53,7 +53,7 @@ class Register extends Form {
                   className="my-0 font-weight-normal"
                   style={{ alignContent: "center" }}
                 >
-                  Login
+                  Register
                 </h4>
               </div>
               <div

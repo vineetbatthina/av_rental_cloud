@@ -47,6 +47,10 @@ class Form extends Component {
     this.setState({ data, errors });
   };
 
+  handleBookRide = () =>{
+    alert("Triggered");
+  }
+
   renderButton = (label, onClick) => {
     return (
       <button
