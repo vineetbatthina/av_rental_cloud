@@ -134,17 +134,17 @@ class UserDashboard extends Component {
         <div className="row" >
           <VehicleId
             style={{ marginTop: "30px" }}
-            data={this.state.vid}
+            data={localStorage.getItem('rideInfo') ? JSON.parse(localStorage.getItem('rideInfo')).vId : "N/A"}
           ></VehicleId>
 
           <CurrentState
             style={{ marginTop: "30px" }}
-            data={this.state.currentState}
+            data={localStorage.getItem('rideInfo') ? "Moving" : "Idle"}
           ></CurrentState>
 
           <ServiceState
             style={{ marginTop: "35px" }}
-            data={this.state.serviceState}
+            data={localStorage.getItem('rideInfo') ? "Active" : "Inactive"}
           ></ServiceState>
           {/* <CurrentLocation
           style={{ marginTop: "35px" }}
@@ -152,7 +152,7 @@ class UserDashboard extends Component {
         ></CurrentLocation> */}
           <RoadService
             style={{ marginTop: "35px" }}
-            data={this.state.roadService}
+            data={localStorage.getItem('rideInfo') ? "In Service" : "No Service"}
           ></RoadService>
           <Link
             className="btn btn-dark"

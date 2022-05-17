@@ -22,10 +22,13 @@ class Form extends Component {
   };
 
   validateProperty = ({ name, value }) => {
-    const obj = { [name]: value };
-    const schema = { [name]: this.schema[name] };
-    const { error } = Joi.validate(obj, schema);
-    return error ? error.details[0].message : null;
+    if (name != "phonenumber") {
+      const obj = { [name]: value };
+      const schema = { [name]: this.schema[name] };
+      const { error } = Joi.validate(obj, schema);
+      return error ? error.details[0].message : null;
+    }
+    return null;
   };
 
   handleSubmit = (e) => {
@@ -47,16 +50,22 @@ class Form extends Component {
     this.setState({ data, errors });
   };
 
-  handleBookRide = () =>{
+  handleBookRide = () => {
     alert("Triggered");
-  }
+  };
 
   renderButton = (label, onClick) => {
     return (
       <button
         disabled={this.validate()}
         onClick={onClick}
-        style={{backgroundColor:'black', color:'white', borderRadius:'5px', width:'25%', height:'100%'}}
+        style={{
+          backgroundColor: "black",
+          color: "white",
+          borderRadius: "5px",
+          width: "25%",
+          height: "100%",
+        }}
       >
         {label}
       </button>

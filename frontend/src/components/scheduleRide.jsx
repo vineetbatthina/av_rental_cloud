@@ -79,11 +79,13 @@ class ScheduleRide extends Form {
       console.log(this.state.data);
       console.log("Submitted1");
       console.log(scheduleData);
+      //{vId: '567', Origin: 'San Jose', Passengers: '4', Destination: 'San Francisco', Datetime: '2022-5-16 23:20:45'}
       console.log("Submitted2");
       const scheduleRideResponse = await scheduleRide(scheduleData);
       console.log(scheduleRideResponse);
       if(scheduleRideResponse.status==200){
         alert("Receipt has been sent to your mobile number");
+        localStorage.setItem('rideInfo',JSON.stringify(scheduleData));
       }
       this.props.history.push("/myRides");
     } catch (ex) {

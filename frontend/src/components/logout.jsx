@@ -8,6 +8,9 @@ class Logout extends Component {
 
     if (user) {
       auth.logout();
+      if(localStorage.getItem('rideInfo')){
+        localStorage.removeItem('rideInfo');
+      }
       window.location = "/";
     } else {
       <Redirect

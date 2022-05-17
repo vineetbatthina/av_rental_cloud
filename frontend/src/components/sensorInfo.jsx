@@ -104,13 +104,15 @@ class SensorInfo extends Component {
 
   render() {
     var now = new Date();
-    var locations = [
-      "San Francisco",
+    var fromLocations = [
       "San Jose",
       "Santa Clara",
+      "Dublin",
+    ];
+    var toLocations = [
+      "San Francisco",
       "Milipitas",
       "San Ramon",
-      "Dublin",
     ];
     var carStates = [
       "Active",
@@ -184,7 +186,7 @@ class SensorInfo extends Component {
                 <div class="card-body">
                   <p className="text-center" style={{ fontSize: "25px" }}>
                     {/* {this.state.heading} */}
-                    {locations[this.generateRandom(0, locations.length)]}
+                    {fromLocations[this.generateRandom(0, fromLocations.length)]}
                   </p>
                 </div>
               </div>
@@ -204,7 +206,7 @@ class SensorInfo extends Component {
                 <div class="card-body">
                   <p className="text-center" style={{ fontSize: "25px" }}>
                     {/* {this.state.location} */}
-                    {locations[this.generateRandom(0, locations.length)]}
+                    {toLocations[this.generateRandom(0, toLocations.length)]}
                   </p>
                 </div>
               </div>

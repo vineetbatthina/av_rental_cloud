@@ -4,11 +4,13 @@ import Joi from "joi-browser";
 import Form from "./common/form";
 import { Redirect } from "react-router";
 import { register } from "../services/userService";
+import Input from "./common/input";
 
 class Register extends Form {
   state = {
     data: { name: "", username: "", password: "" },
     errors: {},
+    phoneNumber : ""
   };
 
   schema = {
@@ -41,14 +43,19 @@ class Register extends Form {
             display: "flex",
             justifyContent: "center",
             marginTop: "10%",
-            height:'100vh'
+            height: "100vh",
           }}
         >
           <div className="col-md-6 col-10 my-5">
-            <div className="card box-shadow border-0" style={{width:'100%'}}>
+            <div className="card box-shadow border-0" style={{ width: "100%" }}>
               <div
                 className="card-header"
-                style={{justifyContent:'center', display:'flex', backgroundColor:'orange', color:'black'}}
+                style={{
+                  justifyContent: "center",
+                  display: "flex",
+                  backgroundColor: "orange",
+                  color: "black",
+                }}
               >
                 <h4
                   className="my-0 font-weight-normal"
@@ -68,6 +75,16 @@ class Register extends Form {
                   {this.renderInput("name", "Name")}
                   {this.renderInput("username", "Username")}
                   {this.renderInput("password", "Password", "password")}
+                  <Input
+                    type="tel"
+                    name="Phone Number"
+                    label="Phone Number"
+                    value={this.state.phoneNumber}
+                    onChange={(e)=>{this.setState({phoneNumber:e.target.value})}}
+                    placeholder="999-999-9999" 
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+                    required
+                  ></Input>
                   {this.renderButton("Register")}
                 </form>
                 <div style={{ display: "flex", justifyContent: "center" }}>
