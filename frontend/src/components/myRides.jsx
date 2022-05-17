@@ -58,6 +58,7 @@ class MyRides extends Component {
           <Grid item md={12}>
             <RidesTable data={rides} />
           </Grid>
+          <div style={{height:'100vh'}}></div>
         </Grid>
     );
   }

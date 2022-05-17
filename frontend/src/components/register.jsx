@@ -41,6 +41,7 @@ class Register extends Form {
             display: "flex",
             justifyContent: "center",
             marginTop: "10%",
+            height:'100vh'
           }}
         >
           <div className="col-md-6 col-10 my-5">

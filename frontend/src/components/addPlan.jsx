@@ -110,10 +110,12 @@ class AddPlan extends Form {
 
   render() {
     return (
-      <React.Fragment>
+      <React.Fragment >
+        <div>
 
+        </div>
         <h1> Add your Plan </h1>
-       <div className="col-md-6 col-10 my-5">
+       <div className="col-md-6 col-10 my-5" style={{height:'100vh'}}>
 
         <div className="card box-shadow border-0" style={{width:'100%'}}>  
       

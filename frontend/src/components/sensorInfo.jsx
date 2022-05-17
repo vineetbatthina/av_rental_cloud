@@ -229,6 +229,7 @@ class SensorInfo extends Component {
             </div>
           </div>
         </div>
+        <div style={{height:'100vh'}}></div>
       </React.Fragment>
     );
   }

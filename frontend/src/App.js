@@ -34,7 +34,7 @@ class App extends Component {
   state = {};
   render() {
     return (
-      <div style={{ backgroundColor:'yellow', height:'100vh', backgroundImage: `url(${background})`, backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
+      <div style={{ backgroundColor:'yellow', height:'100%', backgroundImage: `url(${background})`, backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
          <React.Fragment >
         <NavBar></NavBar>
         <main className="container" style={{ paddingTop: "80px"}}>

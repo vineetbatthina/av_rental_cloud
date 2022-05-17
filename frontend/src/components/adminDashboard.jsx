@@ -52,10 +52,13 @@ class AdminDashboard extends Component {
               float: "right",
               paddingLeft: "20px",
               paddingRight: "20px",
+              height:'100%'
             }}
           ></NumberOfConnectedAVs>
         </Grid>
-        
+        <div style={{height:'100%'}}>
+
+        </div>
       </Grid>
         
 

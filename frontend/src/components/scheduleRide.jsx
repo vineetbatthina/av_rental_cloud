@@ -125,6 +125,7 @@ class ScheduleRide extends Form {
             </div>
           </div>
         </div>
+        <div style={{height:'100vh'}}></div>
       </React.Fragment>
     );
   }

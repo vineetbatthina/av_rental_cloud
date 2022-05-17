@@ -131,7 +131,7 @@ class UserDashboard extends Component {
     return (
       <React.Fragment>
 
-        <div className="row">
+        <div className="row" >
           <VehicleId
             style={{ marginTop: "30px" }}
             data={this.state.vid}
@@ -164,6 +164,8 @@ class UserDashboard extends Component {
             View Sensor Information
           </Link>
         </div>
+        <div style={{height:'100vh'}}></div>
+
       </React.Fragment>
     );
   }

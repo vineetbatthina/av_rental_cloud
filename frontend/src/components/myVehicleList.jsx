@@ -111,6 +111,7 @@ class VehicleList extends Component {
         <Grid item md={12}>
           <MTable data={filteredVehicles} />
         </Grid>
+        <div style={{height:'100vh'}}></div>
       </Grid>
     );
   }
