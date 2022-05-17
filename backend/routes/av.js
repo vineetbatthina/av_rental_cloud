@@ -41,6 +41,7 @@ router.post("/editVehicleStatus", auth, async(req,res) =>{
       res.send("Update of Vehicle could not be done");
     }
     else {
+      console.log(results);
       console.log('Vehicle Status updated');
       res.send("Successful");
     }

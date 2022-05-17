@@ -114,13 +114,13 @@ function AdminVehicleTable({ data }) {
                     className={classes.status}
                     style={{
                       backgroundColor:
-                        (row.vservicestatus === "Inactive" && "red") ||
-                        (row.vservicestatus === "active" && "green") ||
-                        (row.vservicestatus === "Idle" && "blue") ||
-                        (row.vservicestatus === "Blocked" && "orange"),
+                        (row.vcurrentstatus === "Inactive" && "red") ||
+                        (row.vcurrentstatus === "active" && "green") ||
+                        (row.vcurrentstatus === "Idle" && "#0047AB") ||
+                        (row.vcurrentstatus === "Blocked" && "orange"),
                     }}
                   >
-                    {row.vservicestatus}
+                    {row.vcurrentstatus}
                   </Typography>
                 </TableCell>
 
